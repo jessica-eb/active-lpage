@@ -10,6 +10,7 @@ body {
 	font-family: 'Benton Sans', sans-serif;
 	color: #505050;
 	background-color: #6bedc7;
+	font-size: 12px;
 }
 
 a {
@@ -19,7 +20,6 @@ a {
 img {
 	width: 100%;
 }
-
 
 .nav {
 	position: absolute;
@@ -311,6 +311,47 @@ img {
 }
 
 
+@media screen and (max-width: 720px) {
+	body {
+		font-size: 9px;
+	}
+
+	.side {
+		display: none;
+	}
+
+	.footer {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	body {
+		font-size: 6px;
+	}
+
+	.side {
+		display: none;
+	}
+
+	.footer {
+		display: none;
+	}
+
+	.feature__phone {
+		display: none;
+	}
+
+	.feature__txt {
+		width: 45vw;
+	}
+
+	.nav {
+		display: none;
+	}
+
+}
 
 
 
