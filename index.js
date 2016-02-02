@@ -172,7 +172,9 @@ function handleVideo() {
 };
 
 $(document).ready(function() {
-	handleScrollSlides();
-	handleVideo();
-	handleSceneTimelines();
+	if (window.innerWidth > 480) {
+		handleScrollSlides();
+		handleVideo();
+		handleSceneTimelines();
+	}
 });

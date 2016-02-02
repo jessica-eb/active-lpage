@@ -328,7 +328,7 @@ img {
 @media screen and (max-width: 480px) {
 
 	body {
-		font-size: 6px;
+		font-size: 7px;
 	}
 
 	.side {
@@ -347,8 +347,16 @@ img {
 		width: 45vw;
 	}
 
-	.nav {
+	.nav__list__item {
 		display: none;
+	}
+
+	#pinContainer {
+		overflow: visible
+	}
+
+	.feature__slider {
+		width:100vw;
 	}
 
 }
