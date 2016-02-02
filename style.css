@@ -331,6 +331,10 @@ img {
 		font-size: 7px;
 	}
 
+	.scene__title {
+		width: 60vw;
+	}
+
 	.side {
 		display: none;
 	}
