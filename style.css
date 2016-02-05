@@ -1,3 +1,21 @@
+@font-face{
+    font-family: "Benton Sans";
+    src: url('BentonSans-Book.otf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: "Benton Sans";
+    src: url('BentonSans-Bold.otf');
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: "Benton Sans";
+    src: url('BentonSans-Light.otf');
+    font-weight: 200;
+}
+
 * {
 	padding:0;
 	margin:0;
@@ -34,13 +52,15 @@ img {
 	-webkit-align-items: center;
 	justify-content: space-between;
 	-webkit-justify-content: space-between;
-	padding: 10px 5vw 10px 5vw;
+	padding: 5px 10px 5px 10px;
 }
 
 .nav__home {
 	width: 10vw;
 	margin: 5px 0px 5px 0px;
 }
+
+
 
 .nav__list__item {
 	display: inline-block;
@@ -55,6 +75,13 @@ img {
 .nav__list__item:hover {
 	cursor: pointer;
 	opacity: 0.5;
+}
+
+.nav__button {
+	text-transform: uppercase;
+	background-color: #00a8f2;
+	padding: 10px 15px 10px 15px;
+	color: #fff;
 }
 
 .container {
@@ -159,8 +186,13 @@ img {
 	text-align: center;
 }
 
+.scene__title--light {
+	font-weight: 200;
+}
+
 .scene__title--chef {
 	font-size: 3.5em;
+	font-weight: 200;
 }
 
 .scene__title--shadow {
@@ -188,15 +220,15 @@ img {
 }
 
 .scene__waves__item--big {
-	opacity: 0.7;
+	opacity: 0.1;
 }
 
 .scene__waves__item--med{
-	opacity: 0.5;
+	opacity: 0.08;
 }
 
 .scene__waves__item--sm {
-	opacity: 0.3;
+	opacity: 0.05;
 }
 
 .scene__waves--rotate {

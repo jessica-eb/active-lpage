@@ -21,11 +21,12 @@ function handleSceneTimelines() {
 	scene2__subtitle2 = new SplitText(scene2__subtitle2, {types: "lines"});
 
 	var tl_two = new TimelineLite({pause: false});
-	tl_two.staggerFrom([scene2__waveSL, scene2__waveML, scene2__waveBL], 1, {opacity: 0, repeat: -1, repeatDelay: 1, yoyo:true}, 0.3, "waves")
+	tl_two.staggerFrom(scene2__title.lines, 0.3, {opacity:0, y: 10, delay: 0.3}, 0.1)
+	.staggerFrom(scene2__subtitle1.lines, 0.3, {opacity: 0,  y: 10, delay: 0.3}, 0.1)
+	.staggerFrom(scene2__subtitle2.lines, 0.3, {opacity: 0, y: 10}, 0.1)
+	.staggerFrom([scene2__waveSL, scene2__waveML, scene2__waveBL], 1, {opacity: 0, repeat: -1, repeatDelay: 1, yoyo:true}, 0.3, "waves")
 	.staggerFrom([scene2__waveSR, scene2__waveMR, scene2__waveBR], 1, {opacity: 0, repeat: -1, repeatDelay: 1, yoyo:true}, 0.3, "waves")
-	.staggerFrom(scene2__title.lines, 0.3, {opacity:0, y: 10, delay: 0.3}, 0.1, "waves+=1")
-	.staggerFrom(scene2__subtitle1.lines, 0.3, {opacity: 0,  y: 10, delay: 0.3}, 0.1, "waves+=2")
-	.staggerFrom(scene2__subtitle2.lines, 0.3, {opacity: 0, y: 10}, 0.1, "waves+=2.8")
+
 
 	var tl_twothree = new TimelineLite({pause: false});
 	tl_twothree.to(scene2__gradient, 0.5, {opacity:0, ease:Power2.easeOut})
@@ -52,7 +53,6 @@ function handleSceneTimelines() {
 
 	var tl_four = new TimelineLite({pause: false});
 	tl_four.staggerFrom(scene4__title.lines, 0.5, {opacity: 0, y: 20}, 0.1);
-	
 
 	var scene5__slider = document.getElementById('scene5__slider');
 	var scene5__phone = document.getElementById('scene5__phone');
@@ -72,13 +72,18 @@ function handleSceneTimelines() {
 	.staggerFrom(scene5__subtitle1.lines, 0.3, {opacity: 0, y: 10, rotationX: 40}, 0.1)
 	.staggerFrom(scene5__subtitle2.lines, 0.3, {opacity: 0, y: 10, rotationX: 40}, 0.1)
 
+	var tl_fivesix = new TimelineLite({pause: false});
+	tl_fivesix.to(scene5__slider, 0.5, {opacity:0, ease:Power2.easeOut, x: -100})
+
 	var scene6__quote = document.getElementById('scene6__quote');
 	var scene6__author = document.getElementById('scene6__author');
+	var scene6__gradient = document.getElementById('scene6__gradient');
 
 	scene6__quote = new SplitText(scene6__quote, {types: "lines"});
 
 	var tl_six = new TimelineLite({pause: false});
-	tl_six.staggerFrom(scene6__quote.lines, 0.4, {opacity:0, y: 10, rotationX: 40}, 0.2)
+	tl_six.from(scene6__gradient, 0.5, {opacity: 0})
+	.staggerFrom(scene6__quote.lines, 0.4, {opacity:0, y: 10, rotationX: 40}, 0.2)
 	.from(scene6__author, 0.3, {opacity: 0, delay: 0.5});
 
 	var controller = new ScrollMagic.Controller({
@@ -127,11 +132,18 @@ function handleSceneTimelines() {
 	.setTween(tl_four)
 	.addTo(controller);
 
-	var scene_one = new ScrollMagic.Scene({
+	var scene_five = new ScrollMagic.Scene({
 		triggerElement: trigger_five,
 		offset: -100
 	})
 	.setTween(tl_five)
+	.addTo(controller);
+
+	var scene_fivesix = new ScrollMagic.Scene({
+		triggerElement: trigger_six,
+		offset: -200
+	})
+	.setTween(tl_fivesix)
 	.addTo(controller);
 
 	var scene_six = new ScrollMagic.Scene({
