@@ -1,3 +1,21 @@
+@font-face{
+    font-family: "Benton Sans";
+    src: url('BentonSans-Book.otf');
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: "Benton Sans";
+    src: url('BentonSans-Bold.otf');
+    font-weight: 600;
+}
+
+@font-face{
+    font-family: "Benton Sans";
+    src: url('BentonSans-Light.otf');
+    font-weight: 200;
+}
+
 * {
 	padding:0;
 	margin:0;
@@ -8,9 +26,9 @@
 
 body {
 	font-family: 'Benton Sans', sans-serif;
-	color: #505050;
+	color: #45494E;
 	background-color: #6bedc7;
-	font-size: 12px;
+	
 }
 
 a {
@@ -34,7 +52,7 @@ img {
 	-webkit-align-items: center;
 	justify-content: space-between;
 	-webkit-justify-content: space-between;
-	padding: 10px 5vw 10px 5vw;
+	padding: 5px 5px 5px 5px;
 }
 
 .nav__home {
@@ -57,6 +75,13 @@ img {
 	opacity: 0.5;
 }
 
+.nav__button {
+	text-transform: uppercase;
+	background-color: #00a8f2;
+	padding: 10px 15px 10px 15px;
+	color: #fff;
+}
+
 .container {
 	position: fixed;
 	top:0;
@@ -64,45 +89,6 @@ img {
 	z-index: 10;
 	width:100vw;
 	height:100vh;
-}
-
-.side {
-	position: absolute;
-	top:0;
-	left:0;
-	height:100vh;
-	width:5vw;
-	background-color: #fff;
-}
-
-.side--right {
-	right:0;
-	left:auto;
-}
-
-.side__item {
-	position: absolute;
-	top:50vh;
-	left:2.5vw;
-	transform: translateY(-50%) translateX(-50%);
-	width: 3vw;
-}
-
-.side__item--right {
-	left:auto;
-	right: 2.5vw;
-	width: 1vw;
-}
-
-.social {
-	margin: 2vh 0px 2vh 0px;
-	opacity: 0.1;
-
-}
-
-.social:hover {
-	cursor: pointer;
-	opacity: 0.5;
 }
 
 .footer {
@@ -135,6 +121,10 @@ img {
 	overflow: hidden;
 }
 
+.scene--white {
+	background-color: #f5f6f9;
+}
+
 .scene--gradient {
 	background: linear-gradient(to bottom left, #02ffb0, #39c2df);
 }
@@ -148,6 +138,10 @@ img {
 	height: 200vh;
 }
 
+.scene__gradient--bot {
+	background: linear-gradient(top, #02ffb0, #39c2df);
+}
+
 .scene__title {
 	position: absolute;
 	top:50vh;
@@ -155,7 +149,7 @@ img {
 	transform: translateY(-50%) translateX(-50%);
 	font-size: 4em;
 	color: #fff;
-	width: 40vw;
+	width: 60vw;
 	text-align: center;
 }
 
@@ -168,8 +162,17 @@ img {
 	filter: drop-shadow(1px 1px 10px #505050);
 }
 
+.scene__title--sm {
+	width: 45vw;
+	line-height: 1em;
+}
+
+.scene__subtitle {
+	font-size: 2em;
+}
+
 .scene__title__subtitle {
-	font-size: 1em;
+	font-size: 0.6em;
 	font-weight: 200;
 }
 
@@ -177,6 +180,7 @@ img {
 	font-size: 0.3em;
 	margin: 25px 0px 25px 0px;
 	line-height: 1.5em;
+	color: #003C3F;
 }
 
 .scene__waves__item {
@@ -213,6 +217,11 @@ img {
 	height: 100vh;
 }
 
+.feature__slider--right {
+	float: right;
+	width: 50vw;
+}
+
 .feature__phone {
 	width: 18vw;
 	position: absolute;
@@ -223,20 +232,44 @@ img {
 	filter: drop-shadow(1px 1px 10px #505050);
 }
 
-.feature__phone--screen {
-	width: 40vw;
-	right: 10vw;
+
+.feature__phone--right {
+	left: 10vw;
+	right:auto;
+}
+
+.feature__content {
+	position: absolute;
+	top: 50vh;
+	left: 15vw;
+	width: 70vw;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: space-between;
+}
+
+.feature__screen {
+	width: 50vw;
 }
 
 .feature__txt {
 	position: absolute;
-	left: 19vw;
-	top: 30vh;
+	left: 10vw;
+	top: 20vh;
 	width: 30vw;
 }
 
+.feature__screen__txt {
+	margin: 25px;
+}
+
+.feature__screen__txt__link {
+	margin-top: 20px;
+	color: #37C4DE;
+}
+
 .feature__num {
-	font-size: 7em;
+	font-size: 5em;
 	color: #f6682f;
 }
 
@@ -244,6 +277,7 @@ img {
 	font-size: 3em;
 	font-weight: 200;
 	margin: 20px 0px 20px 0px;
+	color: #003C3F;
 }
 
 .feature__subtitle {
@@ -252,7 +286,7 @@ img {
 }
 
 .feature__txt--screen {
-	width: 20vw;
+	width: 25vw;
 }
 
 .scene__quote {
@@ -307,22 +341,69 @@ img {
 #pinContainer {
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
+
 }
+
+.customer__container {
+	position: absolute;
+	top: 50vh;
+	left: 20vw;
+	transform: translateY(-50%);
+	width: 60vw;
+}
+
+.customer__content {
+	position: relative;
+	top:0;
+	left:0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.customer__title {
+	position: absolute;
+	top:10vw;
+	left: -2vw;
+	font-size: 5em;
+	color: #6AEDC7;
+}
+
+.customer__img {
+	width: 40vw;
+}
+
+.customer__comment {
+	width: 15vw;
+	line-height: 1.4em;
+}
+
+@media screen and (min-width: 2000px) {
+	body {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 2000px) {
+	body {
+		font-size: 14px;
+	}
+
+}
+
+@media screen and (max-width: 1280px) {
+	body {
+		font-size: 12px;
+	}
+}
+
 
 
 @media screen and (max-width: 720px) {
 	body {
-		font-size: 9px;
+		font-size: 10px;
 	}
 
-	.side {
-		display: none;
-	}
-
-	.footer {
-		display: none;
-	}
 }
 
 @media screen and (max-width: 480px) {
